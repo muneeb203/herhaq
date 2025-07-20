@@ -28,36 +28,21 @@ const Chat: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
-  const simulateAIResponse = (userMessage: string): ChatMessage => {
-    const responses = [
-      {
-        text: "I understand you're facing a difficult situation. Based on what you've described, this may involve violations of your workplace rights under the Protection of Women Against Harassment Act 2010. Let me explain your options...",
-        category: "Workplace Rights",
-        legalClause: "Protection of Women Against Harassment Act 2010, Section 4",
-        recommendation: "1. Document the incidents 2. Report to management 3. File complaint with Ombudsman if needed"
-      },
-      {
-        text: "This sounds like it relates to your matrimonial rights. According to Pakistani law, you have specific rights regarding your Nikah Nama and maintenance. Would you like me to explain these in detail?",
-        category: "Marriage Rights",
-        legalClause: "Muslim Family Laws Ordinance 1961",
-        recommendation: "Review your Nikah Nama terms and consult with a family law expert"
-      }
-    ];
-
-    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-    
-    return {
-      id: Date.now().toString(),
-      text: randomResponse.text,
-      isUser: false,
-      timestamp: new Date(),
-      category: randomResponse.category,
-      legalClause: randomResponse.legalClause,
-      recommendation: randomResponse.recommendation
-    };
+  const fetchAIResponse = async (userMessage: string): Promise<string> => {
+    try {
+      const response = await fetch('http://localhost:5000/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: userMessage }),
+      });
+      const data = await response.json();
+      return data.answer || "Sorry, I couldn't get a response.";
+    } catch (error) {
+      return "Error connecting to the AI backend.";
+    }
   };
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (!inputText.trim()) return;
 
     const userMessage: ChatMessage = {
@@ -71,12 +56,16 @@ const Chat: React.FC = () => {
     setInputText('');
     setIsLoading(true);
 
-    // Simulate AI processing time
-    setTimeout(() => {
-      const aiResponse = simulateAIResponse(inputText);
-      setMessages(prev => [...prev, aiResponse]);
-      setIsLoading(false);
-    }, 2000);
+    // Call Flask backend
+    const aiText = await fetchAIResponse(inputText);
+    const aiResponse: ChatMessage = {
+      id: (Date.now() + 1).toString(),
+      text: aiText,
+      isUser: false,
+      timestamp: new Date(),
+    };
+    setMessages(prev => [...prev, aiResponse]);
+    setIsLoading(false);
   };
 
   const toggleVoiceRecording = () => {
@@ -134,7 +123,7 @@ const Chat: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <h1 className="text-3xl font-bold text-[#333333] mb-2">
-                Haq AI Legal Assistant
+                Haq AI Assistant
               </h1>
               <p className="text-[#333333] opacity-80">
                 {language === 'en' 

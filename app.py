@@ -1,4 +1,5 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string, jsonify
+from flask_cors import CORS
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.core.settings import Settings
 from llama_index.embeddings.cohere import CohereEmbedding
@@ -8,6 +9,7 @@ from llama_index.core.prompts import PromptTemplate
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Set your system prompt here
 SYSTEM_PROMPT = (
@@ -73,6 +75,15 @@ def home():
             raw_response = query_engine.query(query)
             response = str(raw_response)
     return render_template_string(HTML_TEMPLATE, response=response, query=query)
+
+@app.route('/api/chat', methods=['POST'])
+def api_chat():
+    data = request.get_json()
+    user_query = data.get('query', '')
+    if not user_query:
+        return jsonify({'error': 'No query provided'}), 400
+    raw_response = query_engine.query(user_query)
+    return jsonify({'answer': str(raw_response)})
 
 if __name__ == '__main__':
     app.run(debug=True)
