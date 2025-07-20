@@ -1,0 +1,6 @@
+llama-index
+cohere
+tokenizers
+flask
+llama-index-embeddings-cohere
+llama-index-llms-cohere
