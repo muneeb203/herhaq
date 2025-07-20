@@ -5,3 +5,4 @@ flask
 llama-index-embeddings-cohere
 llama-index-llms-cohere
 flask-cors
+gunicorn

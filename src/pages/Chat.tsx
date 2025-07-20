@@ -30,7 +30,7 @@ const Chat: React.FC = () => {
 
   const fetchAIResponse = async (userMessage: string): Promise<string> => {
     try {
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch('https://herhaq-backend.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: userMessage }),
