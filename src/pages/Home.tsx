@@ -17,5 +17,9 @@ const Home: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Home;
 
+=======
+export default Home;
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c

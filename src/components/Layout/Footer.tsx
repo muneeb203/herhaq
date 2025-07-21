@@ -9,6 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
+<<<<<<< HEAD
            
             <div className="flex items-center space-x-2">
                <a href="/" className="block">
@@ -19,6 +20,14 @@ const Footer: React.FC = () => {
                    />
                 </a>
              </div>
+=======
+            <div className="flex items-center space-x-2">
+              <div className="bg-[#F06292] p-2 rounded-lg">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-2xl font-bold">Haq</span>
+            </div>
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
             <p className="text-gray-300 text-sm leading-relaxed">
               Empowering Pakistani women with AI-driven legal rights assistance. 
               Know your rights, access justice, stay safe.
@@ -70,7 +79,11 @@ const Footer: React.FC = () => {
                 <span>Women Helpline: 1099</span>
               </a>
               <a 
+<<<<<<< HEAD
                 href="https://wa.me/+923338505201" 
+=======
+                href="https://wa.me/+923001234567" 
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-gray-300 hover:text-[#66BB6A] transition-colors"
@@ -89,7 +102,11 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* <div className="border-t border-gray-700 mt-12 pt-8">
+=======
+        <div className="border-t border-gray-700 mt-12 pt-8">
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2025 Haq Legal Rights Assistant. All rights reserved.
@@ -106,7 +123,11 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
+<<<<<<< HEAD
         </div> */}
+=======
+        </div>
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
       </div>
     </footer>
   );

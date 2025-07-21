@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+<<<<<<< HEAD
 import { Menu, X, Phone, LogOut } from 'lucide-react';
+=======
+import { Menu, X, Shield, Phone, LogOut } from 'lucide-react';
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header: React.FC = () => {
@@ -27,7 +31,11 @@ const Header: React.FC = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
+<<<<<<< HEAD
           {/* Logo
+=======
+          {/* Logo */}
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
           <Link to="/" className="flex items-center space-x-2">
             <div className="bg-[#F06292] p-2 rounded-lg">
               <Shield className="h-6 w-6 text-white" />
@@ -35,6 +43,7 @@ const Header: React.FC = () => {
             <span className="text-2xl font-bold text-[#333333]">
               {language === 'en' ? 'Haq' : 'حق'}
             </span>
+<<<<<<< HEAD
           </Link> */}
           
           
@@ -45,6 +54,8 @@ const Header: React.FC = () => {
               alt="Haq Logo"
               className="h-12 w-auto object-contain"
               />
+=======
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
           </Link>
 
           {/* Desktop Navigation */}
@@ -76,7 +87,11 @@ const Header: React.FC = () => {
 
             {/* WhatsApp SOS */}
             <a
+<<<<<<< HEAD
               href="https://wa.me/+923338505201?text=Emergency%20Help%20Needed"
+=======
+              href="https://wa.me/+923001234567?text=Emergency%20Help%20Needed"
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#FFCA28] text-[#333333] p-2 rounded-lg hover:bg-[#FFC107] transition-colors"

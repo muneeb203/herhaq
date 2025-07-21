@@ -8,7 +8,12 @@ import {
   BookOpen, 
   Users, 
   FileText,
+<<<<<<< HEAD
   Scale
+=======
+  Scale,
+  Shield
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
 } from 'lucide-react';
 
 const FeaturesGrid: React.FC = () => {

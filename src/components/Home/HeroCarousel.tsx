@@ -138,7 +138,11 @@ const HeroCarousel: React.FC = () => {
         </div>
       </div>
 
+<<<<<<< HEAD
       {/*Navigation Arrows*/}
+=======
+      {/* Navigation Arrows */}
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
       <button
         onClick={prevSlide}
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors"

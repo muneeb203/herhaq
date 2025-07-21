@@ -28,6 +28,7 @@ const Chat: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
+<<<<<<< HEAD
   const simulateAIResponse = (userMessage: string): ChatMessage => {
     const responses = [
       {
@@ -58,6 +59,23 @@ const Chat: React.FC = () => {
   };
 
   const sendMessage = () => {
+=======
+  const fetchAIResponse = async (userMessage: string): Promise<string> => {
+    try {
+      const response = await fetch('https://herhaq-backend.onrender.com/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: userMessage }),
+      });
+      const data = await response.json();
+      return data.answer || "Sorry, I couldn't get a response.";
+    } catch (error) {
+      return "Error connecting to the AI backend.";
+    }
+  };
+
+  const sendMessage = async () => {
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
     if (!inputText.trim()) return;
 
     const userMessage: ChatMessage = {
@@ -71,12 +89,25 @@ const Chat: React.FC = () => {
     setInputText('');
     setIsLoading(true);
 
+<<<<<<< HEAD
     // Simulate AI processing time
     setTimeout(() => {
       const aiResponse = simulateAIResponse(inputText);
       setMessages(prev => [...prev, aiResponse]);
       setIsLoading(false);
     }, 2000);
+=======
+    // Call Flask backend
+    const aiText = await fetchAIResponse(inputText);
+    const aiResponse: ChatMessage = {
+      id: (Date.now() + 1).toString(),
+      text: aiText,
+      isUser: false,
+      timestamp: new Date(),
+    };
+    setMessages(prev => [...prev, aiResponse]);
+    setIsLoading(false);
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
   };
 
   const toggleVoiceRecording = () => {
@@ -134,7 +165,11 @@ const Chat: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
             <div>
               <h1 className="text-3xl font-bold text-[#333333] mb-2">
+<<<<<<< HEAD
                 Haq AI Legal Assistant
+=======
+                Haq AI Assistant
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
               </h1>
               <p className="text-[#333333] opacity-80">
                 {language === 'en' 

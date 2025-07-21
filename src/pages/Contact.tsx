@@ -83,7 +83,11 @@ const Contact: React.FC = () => {
               </h3>
               <div className="space-y-3">
                 <a
+<<<<<<< HEAD
                   href="https://wa.me/+923338505201?text=EMERGENCY%20HELP%20NEEDED"
+=======
+                  href="https://wa.me/+923001234567?text=EMERGENCY%20HELP%20NEEDED"
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 bg-white/20 rounded-lg hover:bg-white/30 transition-colors"
@@ -91,7 +95,11 @@ const Contact: React.FC = () => {
                   <MessageCircle className="h-5 w-5" />
                   <div>
                     <p className="font-semibold">Emergency WhatsApp</p>
+<<<<<<< HEAD
                     <p className="text-sm">+92 333 8505201</p>
+=======
+                    <p className="text-sm">+92 300 1234567</p>
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
                   </div>
                 </a>
                 <a
@@ -129,7 +137,11 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-[#333333]">Email</p>
+<<<<<<< HEAD
                     <p className="text-[#333333]">momna164@gmail.com</p>
+=======
+                    <p className="text-[#333333]">help@haq.org.pk</p>
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
                   </div>
                 </div>
                 
@@ -159,7 +171,11 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-[#333333]">Address</p>
+<<<<<<< HEAD
                     <p className="text-[#333333]">Islamabad, Pakistan</p>
+=======
+                    <p className="text-[#333333]">Karachi, Pakistan</p>
+>>>>>>> dad3785788b24799a72a6a9969b18bea9d03fa1c
                   </div>
                 </div>
               </div>
